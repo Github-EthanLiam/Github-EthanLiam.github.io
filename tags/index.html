@@ -193,7 +193,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"Introduction","path":"2024/02/28/Introduction/"}]`)
+  const posts = JSON.parse(`[{"title":"你好，游客朋友！","path":"2024/02/27/Introduction/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
@@ -258,13 +258,13 @@
       <div class="main-left--statics">
         <a href="/categories">
           <div>
-            <span>0</span>
+            <span>1</span>
             <span>分类</span>
           </div>
         </a>
         <a href="/tags">
           <div>
-            <span>0</span>
+            <span>1</span>
             <span>标签</span>
           </div>
         </a>
@@ -345,7 +345,7 @@
 <div class="tags">
   <h2 class="tags-title">博客标签</h2>
   <div class="tags-list">
-    
+    <a href="/tags/%E5%AF%BC%E5%AD%A6/" style="font-size: 10px;">导学</a>
   </div>
 </div>
 </div>
