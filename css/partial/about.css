@@ -42,7 +42,7 @@
   box-shadow: 0 0 5px #999;
 }
 .about-detail {
-  display: flex;
+  display: block;
   margin-left: 20px;
   flex-wrap: wrap;
   border: 1px solid #eee;
