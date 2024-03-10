@@ -337,66 +337,115 @@
     </div>
   </div>
 </div></div>
-      <div id="main-container" class="main-container"><link rel="stylesheet" href="/css/partial/archive.css" />
+      <div id="main-container" class="main-container"><link rel="stylesheet" href="/css/partial/index.css" />
 
 
 
-    <div class="archive">
-        <h1 class="archive-title">博客归档</h1>
-        <ul class="archive-list">
+<div class="index">
+  <div class="index-left">
+    
+      <div class="index-article">
+        <!-- <img class="index-article--cover" src="https://s21.ax1x.com/2024/03/10/pFyr9zR.jpg" alt=""> -->
+        <div class="index-article--box">
+          <img class="index-article--cover" data-cover="https://s21.ax1x.com/2024/03/10/pFyr9zR.jpg" alt="计算机导论" />
+        </div>
+        <div class="index-article--content">
+          <a href="/2024/03/07/CSAT/CSAT_Introduction1/">计算机导论 </a>
+          <div>
             
-                <li class="archive-list__year">
-                    <h2>2024年</h2>
-                    <ul>
-                        
-                            <li class="archive-list__month">
-                                <h3>第02月</h3>
-                                <ul>
-                                    
-                                        <li class="archive-list__post">
-                                            <div>
-                                                <a href="/2024/02/28/SiteGuide/">你好，游客朋友！</a>
-                                                <span>02月28日</span>
-                                            </div>
-                                        </li>
-                                    
-                                </ul>
-                            </li>
-                        
-                            <li class="archive-list__month">
-                                <h3>第03月</h3>
-                                <ul>
-                                    
-                                        <li class="archive-list__post">
-                                            <div>
-                                                <a href="/2024/03/15/CSAT/CSAT_C++/">C++语言程序设计</a>
-                                                <span>03月15日</span>
-                                            </div>
-                                        </li>
-                                    
-                                        <li class="archive-list__post">
-                                            <div>
-                                                <a href="/2024/03/09/CSAT/CSAT_C/">C语言程序设计</a>
-                                                <span>03月09日</span>
-                                            </div>
-                                        </li>
-                                    
-                                        <li class="archive-list__post">
-                                            <div>
-                                                <a href="/2024/03/07/CSAT/CSAT_Introduction1/">计算机导论</a>
-                                                <span>03月07日</span>
-                                            </div>
-                                        </li>
-                                    
-                                </ul>
-                            </li>
-                        
-                    </ul>
-                </li>
+              <p>
+                <a class="post-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/">计算机科学与技术</a>
+              </p>
             
-        </ul>
+            
+              <p>
+                <a class="-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E6%A6%82%E8%BF%B0/" rel="tag">计算机专业概述</a>
+              </p>
+            
+          </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+    
+  </div>
+  <div class="index-center">
+    
+  </div>
+  <div class="index-right">
+    <div class="index-right-wrapper">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E7%AB%99%E6%8C%87%E5%BC%95/">入站指引</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/">计算机科学与技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6%E4%B8%8E%E7%90%86%E8%AE%BA/">计算机软件与理论</a></li></ul>
+      <ul class="tags" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E6%A6%82%E8%BF%B0/" rel="tag">计算机专业概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80/" rel="tag">程序设计语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%BC%E8%88%AA/" rel="tag">导航</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">2024年03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">2024年02月</a><span class="archive-list-count">1</span></li></ul>
     </div>
+  </div>
 </div>
+
+
+<script>
+  var allImgBoxs = document.querySelectorAll('.index-article--box');
+  var windowHeight = window.innerHeight;
+  var boxs = Array.from(allImgBoxs);
+  var timer = null;
+  boxs.forEach((box, idx) => {
+    if (!window.loadImageSet || !window.loadImageSet.includes(idx)) {
+      box.classList.add('img-loading');
+    } else {
+      const imgDom = box.querySelector('img');
+      imgDom.src = imgDom.dataset.cover;
+    }
+  });
+
+  function scrollFn() {
+    if (timer) {
+      return;
+    }
+    timer = setTimeout(() => {
+      loadImage();
+      timer = null;
+    }, 100)
+  }
+
+  setTimeout(() => {
+    loadImage();
+  }, 100);
+  if (!window.loadedImage) {
+    document.addEventListener('scroll', scrollFn);
+  }
+
+  function loadImage() {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop;
+    if (boxs.every(box => box.loadedImage)) {
+      document.removeEventListener('scroll', scrollFn);
+      window.loadedImage = 1;
+      return;
+    }
+    boxs.forEach((box, idx) => {
+      if (box.loadedImage) {
+        return;
+      }
+      if (box.getBoundingClientRect().top < windowHeight) {
+        const imgDom = box.querySelector('img');
+        imgDom.src = imgDom.dataset.cover;
+        // 图片成功加载
+        imgDom.onload = () => {
+          box.classList.remove('img-loading');
+          box.loadedImage = true;
+          if (!window.loadImageSet) {
+            window.loadImageSet = [];
+          }
+          window.loadImageSet.push(idx);
+        }
+        // 图片加载失败
+        imgDom.onerror = () => {
+          box.classList.remove('img-loading');
+          box.classList.add('img-error');
+          imgDom.src = '/imgs/404.png';
+        }
+      }
+    });
+  }
+</script> </div>
       <div class="main-right-wrapper"><div class="main-right">
   <div class="main-right--board">
     <div class="main-right--title">
